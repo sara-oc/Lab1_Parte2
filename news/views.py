@@ -3,6 +3,6 @@ from .models import News
 
 # Create your views here.
 
-def newas(request):
+def news(request):
     newss = News.objects.all().order_by('-date') 
     return render(request, 'news.html', {'newss': newss})
