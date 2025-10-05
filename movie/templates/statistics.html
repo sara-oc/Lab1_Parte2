@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    <div class="row">
+        
+        <div class="col-md-6 mb-4">
+            <h3>Distribución por Año</h3>
+            {% if year_graphic %}
+                <img src="data:image/png;base64,{{ year_graphic }}" 
+                     alt="Movies per year chart" 
+                     class="img-fluid border p-2">
+            {% else %}
+                <p>No hay datos suficientes para el gráfico de años.</p>
+            {% endif %}
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h3>Distribución por Género</h3>
+            {% if genre_graphic %}
+                <img src="data:image/png;base64,{{ genre_graphic }}" 
+                     alt="movies per genre chart" 
+                     class="img-fluid border p-2">
+            {% else %}
+                <p>No hay datos suficientes para el gráfico de géneros.</p>
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock content %}
